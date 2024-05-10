@@ -4,6 +4,7 @@ import java.io.*;
 import java.util.ArrayList;
 
 public class TaskList implements Serializable {
+    @Serial
     private static final long serialVersionUID = 1L;
     private static ArrayList<Task> tasks;
 
@@ -31,7 +32,7 @@ public class TaskList implements Serializable {
         try (ObjectInputStream in = new ObjectInputStream(new FileInputStream("tasks.dat"))) {
             return (ArrayList<Task>) in.readObject();
         } catch (IOException | ClassNotFoundException e) {
-            return new ArrayList<Task>();
+            return new ArrayList<>();
         }
     }
 }
