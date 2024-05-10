@@ -1,6 +1,8 @@
 package ui;
 
 import com.formdev.flatlaf.FlatDarkLaf;
+import core.Task;
+import core.TaskList;
 
 import javax.swing.*;
 import java.awt.*;
@@ -21,6 +23,10 @@ public class Main extends JFrame {
 
     public static void main(String[] args) {
         FlatDarkLaf.setup();
+        TaskList taskList = new TaskList();
+        Task task1 = new Task("Get book", "need it now");
+        taskList.addTask(task1);
+        System.out.println(taskList.getTasks());
         new Main();
     }
 }
