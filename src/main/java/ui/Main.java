@@ -14,8 +14,9 @@ public class Main extends JFrame {
     private JButton view;
     private JButton create;
 
+
     public Main() {
-        setTitle("Todo List");
+        setTitle("Create Task");
         setContentPane(MainPannel);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(500, 650);
@@ -25,9 +26,8 @@ public class Main extends JFrame {
         create.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                CreateTask createTask = new CreateTask();
-                createTask.setVisible(true);
                 dispose();
+                new CreateTask().setVisible(true);
             }
         });
     }

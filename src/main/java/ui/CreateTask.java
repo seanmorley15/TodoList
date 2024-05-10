@@ -13,19 +13,18 @@ public class CreateTask extends JFrame {
     private JLabel titleText;
 
     public CreateTask() {
-        JFrame frame = new JFrame("Create Task");
-        frame.setContentPane(CreateTask);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(500, 650);
-        frame.setLocationRelativeTo(null);
-        frame.setVisible(true);
+        setTitle("Create Task");
+        setContentPane(CreateTask);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setSize(500, 650);
+        setLocationRelativeTo(null);
+        setVisible(true);
         titleText.setFont(titleText.getFont().deriveFont(Font.PLAIN, 30f));
         backButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Main main = new Main();
-                main.setVisible(true);
-                frame.dispose();
+                dispose();
+                new Main().setVisible(true);
             }
         });
     }
@@ -34,5 +33,4 @@ public class CreateTask extends JFrame {
         FlatDarkLaf.setup();
         new CreateTask();
     }
-
 }
