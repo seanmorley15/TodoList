@@ -12,12 +12,12 @@ public class TaskList implements Serializable {
         tasks = loadTasksFromFile();
     }
 
-    public void addTask(Task task) {
+    public static void addTask(Task task) {
         tasks.add(task);
         saveTasksToFile();
     }
 
-    public ArrayList<Task> getTasks() {
+    public static ArrayList<Task> getTasks() {
         return tasks;
     }
 
