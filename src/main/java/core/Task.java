@@ -34,6 +34,6 @@ public class Task implements Serializable {
         this.done = done;
     }
     public String toString() {
-        return "Task [name=" + name + ", description=" + description + ", done=" + done + "]";
+        return  name + ": " + description + " | Done: " + done;
     }
 }
