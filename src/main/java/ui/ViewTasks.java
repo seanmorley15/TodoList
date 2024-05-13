@@ -38,19 +38,14 @@ public class ViewTasks extends JFrame {
         deleteButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String selected = (String) taskList.getSelectedValue();
-                System.out.println(selected);
                 int index = taskList.getSelectedIndex();
-                taskList.remove(index); // remove from local array
-                removeTask(index); // remove and save globally
-                updateListDisplay(); // update the JList
+                callRemoveTask(index);
             }
         });
         completeButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 int index = taskList.getSelectedIndex();
-                Task task = getTask(index);
                 updateStatus(index);
 
 
@@ -85,6 +80,19 @@ public class ViewTasks extends JFrame {
         }
         // Set the model for the JList
         // adds to the JList
+        taskList.setModel(listModel);
+    }
+
+    public void callRemoveTask(int index) {
+        ArrayList<Task> tasks = getTasks();
+        tasks.remove(index);
+        setTaskList(tasks); // overrides the old task list with the new one, basically the same as
+        // calling the remove task static method
+        DefaultListModel<String> listModel = new DefaultListModel<>();
+        for (Task t : tasks) {
+            listModel.addElement(t.toString());
+        }
+
         taskList.setModel(listModel);
     }
  }
