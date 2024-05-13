@@ -31,6 +31,13 @@ public class Main extends JFrame {
                 new CreateTask().setVisible(true);
             }
         });
+        view.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                dispose();
+                new ViewTasks().setVisible(true);
+            }
+        });
     }
 
     public static void main(String[] args) {

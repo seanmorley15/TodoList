@@ -18,6 +18,7 @@ public class CreateTask extends JFrame {
     private JTextField nameInput;
     private JTextField descInput;
     private JButton submitButton;
+    private JLabel field1;
 
     public CreateTask() {
         setTitle("Create Task");
@@ -27,6 +28,7 @@ public class CreateTask extends JFrame {
         setLocationRelativeTo(null);
         setVisible(true);
         titleText.setFont(titleText.getFont().deriveFont(Font.PLAIN, 30f));
+        field1.setText(getTasks().toString());
         backButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
