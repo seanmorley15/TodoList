@@ -35,4 +35,18 @@ public class TaskList implements Serializable {
             return new ArrayList<>();
         }
     }
+
+    public static void removeTask(int index) {
+        tasks.remove(index);
+        saveTasksToFile();
+    }
+
+    public static Task getTask(int index) {
+        return tasks.get(index);
+    }
+
+    public static void setTaskList(ArrayList<Task> t) {
+        tasks = t;
+        saveTasksToFile();
+    }
 }
