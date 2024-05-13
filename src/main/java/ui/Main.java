@@ -1,6 +1,7 @@
 package ui;
 
 import com.formdev.flatlaf.FlatDarkLaf;
+import com.formdev.flatlaf.FlatLaf;
 import core.Task;
 import core.TaskList;
 
@@ -8,6 +9,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
+import static core.ThemeManager.getTheme;
 
 public class Main extends JFrame {
     private JPanel MainPannel;
@@ -41,7 +44,7 @@ public class Main extends JFrame {
     }
 
     public static void main(String[] args) {
-        FlatDarkLaf.setup();
+        FlatLaf.setup(getTheme());
         TaskList taskList = new TaskList();
         // instantiates a new taskList to store the tasks
         new Main();

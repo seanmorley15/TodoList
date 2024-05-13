@@ -1,6 +1,5 @@
 package ui;
 
-import com.formdev.flatlaf.FlatDarkLaf;
 import core.Task;
 
 import javax.swing.*;
@@ -10,6 +9,7 @@ import java.awt.event.ActionListener;
 
 import static core.TaskList.addTask;
 import static core.TaskList.getTasks;
+import static core.ThemeManager.getTheme;
 
 public class CreateTask extends JFrame {
     private JPanel CreateTask;
@@ -51,7 +51,7 @@ public class CreateTask extends JFrame {
     }
 
     public static void main(String[] args) {
-        FlatDarkLaf.setup();
+
         new CreateTask();
     }
 }
